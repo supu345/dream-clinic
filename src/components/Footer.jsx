@@ -9,9 +9,13 @@ import {
   FaPhone,
 } from "react-icons/fa";
 import doc from "../assets/doctor-re-bg.png";
+import logo from "../assets/logo.png";
+import stethoscope from "../assets/stethoscope.png";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
 import { GiChestnutLeaf } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { SlideUp } from "../utility/animation";
 const Footer = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showButton, setShowButton] = useState(false);
@@ -40,8 +44,14 @@ const Footer = () => {
 
   return (
     <div>
-      <div className="bg-gradient-to-r from-blue-500/50 to-green-500/50 flex flex-row px-[100px] py-6 h-[300px]">
-        <div className="w-1/2 text-white">
+      <motion.div
+        variants={SlideUp(0.2)}
+        initial="hidden"
+        whileInView={"visible"}
+        div
+        className="bg-gradient-to-r from-blue-500/50 to-green-500/50 flex flex-row px-[100px] py-6 h-[400px]"
+      >
+        <div className="w-1/2 text-white pt-[60px]">
           <p className="text-4xl font-bold text-white">
             Start Your Journey to Better Health Now
           </p>
@@ -58,31 +68,39 @@ const Footer = () => {
             </button>
           </div>
         </div>
-        <div className="w-1/2 ">
+        <div className="w-1/2 flex items-center justify-center">
           <img src={doc} alt="" className="h-[400px] w-[300px] object-cover" />
         </div>
-      </div>
+      </motion.div>
       <footer className="bg-gray-900 text-gray-200 py-16 px-6 relative">
         {/* Footer content */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
           <div>
-            <div className="flex  items-center gap-2 font-bold text-2xl ">
+            <div className="flex  items-center gap-2  py-3">
               <Link to={"/"} onClick={() => window.scrollTo(0, 0)}>
-                {/* <img src={logo} alt="logo" className="h-[70px] w-[70px]" /> */}
-                <GiChestnutLeaf className="text-green-700" />
+                <img src={logo} alt="logo" className="h-[70px] w-[70px] " />
+                {/* <GiChestnutLeaf className="text-green-700" /> */}
               </Link>
-              <p classNkkame="text-blue-700">Serenia</p>
+              <p classNkkame="text-blue-700">
+                Japan Bangladesh Friendship Hospital
+              </p>
             </div>
             <p className="text-gray-400">
               Our mission is simple yet profound: to empower individuals and
               families in our community to live healthier, happier lives.
             </p>
+
             <div className="flex gap-4 mt-4">
               <FaFacebookF className="w-5 h-5 hover:text-white cursor-pointer" />
               <FaTwitter className="w-5 h-5 hover:text-white cursor-pointer" />
               <FaInstagram className="w-5 h-5 hover:text-white cursor-pointer" />
               <FaLinkedinIn className="w-5 h-5 hover:text-white cursor-pointer" />
             </div>
+            <img
+              src={stethoscope}
+              alt="stethoscope"
+              className="h-[200px] w-[200px]"
+            />
           </div>
           <div>
             <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
@@ -122,7 +140,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-700 mt-10 pt-6 text-center text-gray-500 text-sm">
-          &copy; {new Date().getFullYear()} Soothe. All rights reserved.
+          &copy; {new Date().getFullYear()} Serenia. All rights reserved.
         </div>
 
         {/* Scroll To Top */}

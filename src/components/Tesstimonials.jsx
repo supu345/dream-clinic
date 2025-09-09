@@ -61,21 +61,15 @@ const Tesstimonials = () => {
     },
   ];
   return (
-    <div className="px-6 pt-9 bg-gradient-to-r from-blue-500 to-green-500">
+    <div
+      className="px-6 pt-9 bg-cover bg-center relative"
+      style={{
+        backgroundImage:
+          "url('https://images.pexels.com/photos/6129681/pexels-photo-6129681.jpeg",
+      }}
+    >
+      <div className="absolute inset-0 bg-black/50"></div>
       <div className=" mt-7">
-        {/* <motion.div
-          variants={SlideRight(0.4)}
-          initial="hidden"
-          whileInView="visible"
-          className="md:w-[500px]"
-        >
-          <img
-            src="https://images.pexels.com/photos/6627291/pexels-photo-6627291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            alt="photo"
-            className="rounded-2xl h-[300px] lg:h-[400px] w-full lg:w-[500px] md:w-[500px] mx-auto lg:mx-0 mt-6 lg:mt-12 object-cover transition duration-700  ease-in-out hover:scale-105"
-          />
-        </motion.div> */}
-
         <motion.div
           variants={SlideLeft(0.6)}
           initial="hidden"
@@ -83,7 +77,7 @@ const Tesstimonials = () => {
           className="w-full "
         >
           <div id="testimonials" className="py-10  relative">
-            <p className="text-2xl lg:text-3xl font-bold text-center lg:text-left ml-0 lg:ml-7">
+            <p className="px-7 text-2xl lg:text-3xl font-bold text-white text-center lg:text-left ml-0 lg:ml-7">
               Amazing Review from Customers
             </p>
             <div className="max-w-full lg:max-w-6xl mx-auto py-10 px-4">

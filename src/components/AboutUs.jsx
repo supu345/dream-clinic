@@ -4,9 +4,15 @@ import { FaUserDoctor } from "react-icons/fa6";
 import { ImFileText2 } from "react-icons/im";
 import { PiHeartStraightBold } from "react-icons/pi";
 import { FaRegStar } from "react-icons/fa6";
+import { motion } from "framer-motion";
+import { SlideUp } from "../utility/animation";
 const AboutUs = () => {
   return (
-    <div>
+    <motion.div
+      variants={SlideUp(0.2)}
+      initial="hidden"
+      whileInView={"visible"}
+    >
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/2">
           <img
@@ -81,7 +87,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

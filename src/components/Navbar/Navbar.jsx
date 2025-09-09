@@ -16,14 +16,16 @@ export const NavbarLinks = [
     name: "About",
     link: "/about",
   },
+
   {
-    name: "Services",
-    link: "/services",
+    name: "Specialities",
+    link: "/specialities",
   },
   {
     name: "Blogs",
-    link: "/",
+    link: "/blogs",
   },
+
   {
     name: "Contact",
     link: "/contact",
@@ -83,12 +85,12 @@ const Navbar = ({ handleOrderPopup }) => {
         </div>
         <div className="container py-3 px-7 sm:py-0">
           <div className="flex flex-row justify-between items-center">
-            <div className="flex  items-center gap-2 font-bold text-2xl ">
+            <div className="flex  items-center gap-1 ">
               <Link to={"/"} onClick={() => window.scrollTo(0, 0)}>
-                {/* <img src={logo} alt="logo" className="h-[70px] w-[70px]" /> */}
-                <GiChestnutLeaf className="text-green-700" />
+                <img src={logo} alt="logo" className="h-[70px] w-[70px]" />
+                {/* <GiChestnutLeaf className="text-green-700" /> */}
               </Link>
-              <p className="text-blue-700">Serenia</p>
+              <p className="text-md">Japan Bangladesh Friendship Hospital</p>
             </div>
             <div className="hidden md:block">
               <ul className="flex items-center gap-6">

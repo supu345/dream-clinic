@@ -2,11 +2,18 @@ import React from "react";
 import { AiOutlineProfile } from "react-icons/ai";
 import { PiHeartbeatFill } from "react-icons/pi";
 import diamond from "../assets/diamond.png";
+import { motion } from "framer-motion";
+import { SlideUp } from "../utility/animation";
 const Packages = () => {
   return (
     <div>
       {/* head */}
-      <div className="text-center py-[50px]">
+      <motion.div
+        variants={SlideUp(0.2)}
+        initial="hidden"
+        whileInView={"visible"}
+        className="text-center py-[50px]"
+      >
         {/* Icon + text */}
         <div className="flex flex-row items-center justify-center gap-2 mb-5">
           <PiHeartbeatFill className="text-blue-700 text-xl" />
@@ -26,9 +33,14 @@ const Packages = () => {
 
         {/* Border centered */}
         <div className="border-b-2 border-blue-700 w-[200px] mx-auto"></div>
-      </div>
+      </motion.div>
       {/* pkg */}
-      <div className="flex flex-col md:flex-row md:gap-9 md:px-[200px] px-5  items-stretch">
+      <motion.div
+        variants={SlideUp(0.2)}
+        initial="hidden"
+        whileInView={"visible"}
+        className="flex flex-col md:flex-row md:gap-9 md:px-[200px] px-5  items-stretch"
+      >
         {/* pkg 1 */}
         <div className=" mb-9 md:w-[300px] md:h-[400px] bg-gray-200 text-center p-6 rounded-xl shadow-md">
           <AiOutlineProfile className="bg-blue-500 text-white text-4xl p-2 rounded-full mx-auto mb-4" />
@@ -87,7 +99,7 @@ const Packages = () => {
             Get Started
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

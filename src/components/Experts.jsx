@@ -2,7 +2,8 @@ import React from "react";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { LuMoveRight } from "react-icons/lu";
 import { PiHeartbeatFill } from "react-icons/pi";
-
+import { motion } from "framer-motion";
+import { SlideUp } from "../utility/animation";
 const Experts = () => {
   return (
     <div className="px-4 md:px-[100px] py-12 mt-7">
@@ -10,7 +11,12 @@ const Experts = () => {
         https://preview.themeforest.net/item/soothe-medical-healthcare-elementor-template-kit/full_screen_preview/59334340
       </p> */}
       {/*header */}
-      <div className="flex flex-col md:flex-row gap-7">
+      <motion.div
+        variants={SlideUp(0.2)}
+        initial="hidden"
+        whileInView={"visible"}
+        className="flex flex-col md:flex-row gap-7"
+      >
         <div className="w-full md:w-1/2  ">
           <div className="flex flex-row items-center  gap-2  ">
             <PiHeartbeatFill className="text-blue-700 text-xl" />
@@ -28,9 +34,14 @@ const Experts = () => {
             officia voluptatem, quibusdam dicta quidem necessitatibus vero
           </p>
         </div>
-      </div>
+      </motion.div>
       {/*body*/}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-7">
+      <motion.div
+        variants={SlideUp(0.2)}
+        initial="hidden"
+        whileInView={"visible"}
+        className="grid grid-cols-1 md:grid-cols-2 gap-6 py-7"
+      >
         {/*1 */}
         <div
           className="bg-blue-700 rounded-2xl flex flex-col md:flex-row overflow-hidden"
@@ -255,7 +266,7 @@ const Experts = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
